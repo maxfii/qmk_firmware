@@ -65,11 +65,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // TODO: mod taps on symbol layer
   [NUM] = LAYOUT_split_3x6_3(
-  //,-------------------             -------        ---------       ---------      --------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_1,                KC_2,            KC_3,          KC_4,          KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
-  //|--------+--------+-             ------+        --------+       --------+      --------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, KC_EXLM,               KC_AT,         KC_HASH,        KC_DLR,       KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, DW_PLUS, DW_EQUAL, XXXXXXX,
-  //|--------+--------+-             ------+        --------+       --------+      --------|                    |--------+--------+--------+--------+--------+--------|
+  //,---------      ----------       -------        ---------       ---------      --------.                    ,-----------------------------------------------------.
+      XXXXXXX,          KC_1,          KC_2,            KC_3,          KC_4,          KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
+  //|--------+      --------+-       ------+        --------+       --------+      --------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX,       KC_EXLM,         KC_AT,         KC_HASH,        KC_DLR,       KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, DW_PLUS, DW_EQUAL, XXXXXXX,
+  //|--------+      --------+-       ------+        --------+       --------+      --------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, TD(TD_PARENS), TD(TD_BRACES), TD(TD_BRACKETS), TD(TD_SLASHES), TD(TD_GRAVE),                      KC_PIPE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, KC_TRNS, XXXXXXX
@@ -82,11 +82,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_AGIN, KC_PASTE, KC_COPY, KC_CUT, KC_UNDO, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      DF(GAME),  KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     DF(GAME),  KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_INS , KC_HOME,  KC_PGDN, KC_PGUP, KC_END, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, KC_TRNS, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
+                                          XXXXXXX, KC_TRNS, XXXXXXX,    KC_ENT , XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -98,16 +98,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                           |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|         |--------+--------+--------+--------+--------+--------+--------|
-                                           KC_DEL,  KC_SPC,  MO(GAMEFUN),    XXXXXXX, XXXXXXX, XXXXXXX
+                                           KC_DEL,  KC_SPC,  MO(GAMEFUN),    KC_ESC, XXXXXXX, XXXXXXX
                                       //`--------------------------'         `--------------------------'
   ),
   [GAMEFUN] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX,    KC_1,    KC_2, KC_TRNS,    KC_3,    KC_4,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, KC_ESC,     KC_M,    KC_T,    KC_G,    KC_B,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
