@@ -36,6 +36,7 @@ enum Taps {
 
 #define DW_EQUAL KC_RIGHT_BRACKET
 #define DW_PLUS  KC_RIGHT_CURLY_BRACE
+#define DW_QUES  KC_LEFT_CURLY_BRACE
 #define DW_FSLASH KC_LEFT_BRACKET
 
 
@@ -70,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+      --------+-       ------+        --------+       --------+      --------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,       KC_EXLM,         KC_AT,         KC_HASH,        KC_DLR,       KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, DW_PLUS, DW_EQUAL, XXXXXXX,
   //|--------+      --------+-       ------+        --------+       --------+      --------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, TD(TD_PARENS), TD(TD_BRACES), TD(TD_BRACKETS), TD(TD_SLASHES), TD(TD_GRAVE),                      KC_PIPE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, TD(TD_PARENS), TD(TD_BRACES), TD(TD_BRACKETS), TD(TD_SLASHES), TD(TD_GRAVE),                      KC_PIPE, DW_QUES, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, KC_TRNS, XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -82,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_AGIN, KC_PASTE, KC_COPY, KC_CUT, KC_UNDO, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     DF(GAME),  KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, XXXXXXX,
+      XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                     DF(GAME),  KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_INS , KC_HOME,  KC_PGDN, KC_PGUP, KC_END, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
