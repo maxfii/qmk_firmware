@@ -53,11 +53,11 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_split_3x6_3(
   //,------------------     ------------  ---------      ---------       -----.                    ,--------------------         ---------       ----------      ------          --------.
-       KC_TAB,    KC_Q,         KC_W,       KC_E,          KC_R,           KC_T,                         KC_Y,    KC_U,             KC_I,           KC_O,         KC_P,             KC_BSPC,
+       KC_BTN2,   KC_Q,         KC_W,       KC_E,          KC_R,           KC_T,                         KC_Y,    KC_U,             KC_I,           KC_O,         KC_P,             KC_BTN2,
   //|--------+--------+     --------+---  -----+---      -----+---       -----|                    |--------+--------+--         ------+--       ------+---      -----+          --------|
-      KC_LCTL, G(KC_A),    A(KC_S),      C(KC_D),      S(KC_F),            KC_G,                         KC_H,    S(KC_J),        C(KC_K),        A(KC_L),  G(KC_SCLN),             KC_QUOT,
+      KC_BTN3, LGUI_T(KC_A), LALT_T(KC_S),LCTL_T(KC_D), LSFT_T(KC_F),      KC_G,                         KC_H, LSFT_T(KC_J), LCTL_T(KC_K),  LALT_T(KC_L), LGUI_T (KC_SCLN),         KC_QUOT,
   //|--------+--------+---   -----+-     -------  +     --------+-       - ------|                    |--------+--------+------  --+------      --+--------     +--------|
-      KC_LSFT,    KC_Z,       KC_X,         KC_C,         KC_V,            KC_B,                         KC_N,    KC_M,             KC_COMM,        KC_DOT,       KC_SLSH,           KC_ESC,
+      KC_BTN1,    KC_Z,       KC_X,         KC_C,         KC_V,            KC_B,                         KC_N,    KC_M,             KC_COMM,        KC_DOT,       KC_SLSH,          KC_BTN1,
   //|--------+--------+---   -----+-     -------+--     ------+---                                -----+--------|  |--------+--  ------+--      ------+----     ----+--------+--------+--------|
                                                   KC_ESC, LT(NAV, KC_SPC),  KC_TAB,                               KC_ENT,   LT (NUM, KC_BSPC), LT(FUN, KC_DELETE)
                                               //`--------------------------'  `                         --------------------------'
@@ -67,11 +67,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // TODO: mod taps on symbol layer
   [NUM] = LAYOUT_split_3x6_3(
   //,---------      ----------       -------        ---------       ---------      --------.                    ,-----------------------------------------------------.
-      XXXXXXX,          KC_1,          KC_2,            KC_3,          KC_4,          KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
+      XXXXXXX,          KC_1,          KC_2,            KC_3,          KC_4,          KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  XXXXXXX,
   //|--------+      --------+-       ------+        --------+       --------+      --------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,       KC_EXLM,         KC_AT,         KC_HASH,        KC_DLR,       KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, DW_PLUS, DW_EQUAL, XXXXXXX,
   //|--------+      --------+-       ------+        --------+       --------+      --------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, TD(TD_PARENS), TD(TD_BRACES), TD(TD_BRACKETS), TD(TD_SLASHES), TD(TD_GRAVE),                      KC_PIPE, DW_QUES, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, TD(TD_PARENS), TD(TD_BRACES), TD(TD_BRACKETS), TD(TD_SLASHES), TD(TD_GRAVE),                      KC_PIPE, DW_QUES, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, KC_TRNS, XXXXXXX
                                       //`--------------------------'  `--------------------------'
