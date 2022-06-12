@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+---   -----+-     -------  +     --------+-       - ------|                    |--------+--------+------  --+------      --+--------     +--------|
       KC_BTN1,    KC_Z,       KC_X,         KC_C,         KC_V,            KC_B,                         KC_N,    KC_M,             KC_COMM,        KC_DOT,       KC_SLSH,          KC_BTN1,
   //|--------+--------+---   -----+-     -------+--     ------+---                                -----+--------|  |--------+--  ------+--      ------+----     ----+--------+--------+--------|
-                                                  KC_ESC, LT(NAV, KC_SPC),  KC_TAB,                               KC_ENT,   LT (NUM, KC_BSPC), LT(FUN, KC_DELETE)
+                                                  KC_ESC, LT(NAV, KC_SPC),  KC_TAB,                      LT(NAV, KC_ENT),   LT (NUM, KC_BSPC), LT(FUN, KC_DELETE)
                                               //`--------------------------'  `                         --------------------------'
 
   ),
@@ -106,11 +106,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                           ,-----------------------------------------------------.
       KC_ESC,  KC_TAB,     KC_Q,    KC_W,    KC_E,    KC_R,                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                           |--------+--------+--------+--------+--------+--------|
-      KC_DEL, KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,                            DF(BASE), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      MO(GAMEFUN), KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,                            DF(BASE), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                           |--------+--------+--------+--------+--------+--------|
-      kc_spc, KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_DEL, KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|         |--------+--------+--------+--------+--------+--------+--------|
-                                           KC_DEL,  KC_SPC,  MO(GAMEFUN),    KC_ESC, XXXXXXX, XXXXXXX
+                                           KC_SPC,  KC_BTN2,  KC_BTN1,    KC_ESC, XXXXXXX, XXXXXXX
                                       //`--------------------------'         `--------------------------'
   ),
   [GAMEFUN] = LAYOUT_split_3x6_3(
