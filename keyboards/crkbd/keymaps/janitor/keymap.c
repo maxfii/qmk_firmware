@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_BTN3 , LGUI_T(KC_A) , LALT_T(KC_S) , LCTL_T(KC_D) , LSFT_T(KC_F) , KC_G ,            KC_H , LSFT_T(KC_J) , LCTL_T(KC_K) , LALT_T(KC_L) , LGUI_T (KC_SCLN) , KC_QUOT ,
     KC_BTN1 , KC_Z         , KC_X         , KC_C         , KC_V         , KC_B ,            KC_N , KC_M         , KC_COMM      , KC_DOT       , KC_SLSH          , KC_BTN1 ,
 
-                                                KC_ESC, LT(NAV, KC_SPC), KC_TAB,            KC_ENT,   LT (NUM, KC_BSPC), LT(FUN, KC_DELETE)
+                                                KC_ESC, LT(NAV, KC_SPC), KC_TAB,            KC_ENT,   LT (NUM, KC_BSPC), LT(OSL(FUN), KC_DELETE)
   ),
 
   [NUM] = LAYOUT_split_3x6_3(
@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [FUN] = LAYOUT_split_3x6_3(
-    XXXXXXX , KC_F1   , MEH_T(KC_F2) , HYPR(KC_F3) , KC_F4   , KC_F5   ,            KC_F6  , KC_F7   , HYPR_T(KC_F8) , MEH_T(KC_F9) , KC_F10  , XXXXXXX ,
+    XXXXXXX , KC_F1   , MEH_T(KC_F2) , HYPR_T(KC_F3) , KC_F4   , KC_F5   ,            KC_F6  , KC_F7   , HYPR_T(KC_F8) , MEH_T(KC_F9) , KC_F10  , XXXXXXX ,
     XXXXXXX , KC_LGUI , KC_LALT      , KC_LCTL     , KC_LSFT , XXXXXXX ,            KC_F11 , KC_LSFT , KC_LCTL       , KC_LALT      , KC_LGUI , XXXXXXX ,
     XXXXXXX , XXXXXXX , XXXXXXX      , XXXXXXX     , XXXXXXX , XXXXXXX ,            KC_F12 , XXXXXXX , XXXXXXX       , XXXXXXX      , XXXXXXX , XXXXXXX ,
 
