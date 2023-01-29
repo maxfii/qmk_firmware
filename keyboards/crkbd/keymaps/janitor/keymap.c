@@ -43,7 +43,7 @@ enum Taps {
 combo_t key_combos[] = {};
 uint16_t COMBO_LEN = 0;
 
-#define _______ XXXXXXX
+#define ___ XXXXXXX
 
 enum custom_keycodes {
   REPEAT = SAFE_RANGE,
@@ -67,29 +67,25 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_split_3x6_3(
-        QK_MAKE , KC_Q         , MEH_T(KC_W)  , HYPR_T(KC_E) , KC_R         , KC_T , KC_Y , KC_U         , HYPR_T(KC_I) , MEH_T(KC_O)  , KC_P             , KC_BTN2 ,
+        QK_MAKE , KC_Q         , KC_W         , KC_E         , KC_R         , KC_T , KC_Y , KC_U         , KC_I         , KC_O         , KC_P             , KC_BTN2 ,
         QK_BOOT , LGUI_T(KC_A) , LALT_T(KC_S) , LCTL_T(KC_D) , LSFT_T(KC_F) , KC_G , KC_H , LSFT_T(KC_J) , LCTL_T(KC_K) , LALT_T(KC_L) , LGUI_T (KC_SCLN) , KC_QUOT ,
         KC_BTN1 , KC_Z         , KC_X         , KC_C         , KC_V         , KC_B , KC_N , KC_M         , KC_COMM      , KC_DOT       , KC_SLSH          , KC_BTN1 ,
 
-                                                    _______, KC_SPC, REPEAT,            OSL(SYS),   KC_BSPC, _______
+        ___, MEH_T(KC_SPC), REPEAT,            OSL(NUM), OSL(SYS),  ___
     ),
     [SYS] = LAYOUT_split_3x6_3(
-        _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______ , _______  , _______ ,
-        _______ , _______ , _______ , _______ , _______ , _______ , _______ , KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT , _______ ,
-        _______ , KC_ESC  , _______ , _______ , KC_TAB  , _______ , _______ , KC_ENT  , KC_BSPC , _______ , KC_DEL   , _______ ,
+        ___ , ___    , ___ , ___ , ___          , ___ , ___ , ___     , ___     , ___    , ___      , ___ ,
+        ___ , ___    , ___ , ___ , LALT(KC_TAB) , ___ , ___ , KC_LEFT , KC_DOWN , KC_UP  , KC_RIGHT , ___ ,
+        ___ , KC_ESC , ___ , ___ , KC_TAB       , ___ , ___ , KC_ENT  , KC_BSPC , KC_DEL , ___      , ___ ,
 
-                                   _______, OSL(NUM), LM(NUM, MOD_LSFT),       _______, _______, _______
+        ___, OSL(NUM), ___,       OSL(NUM), MO(BASE), ___
     ),
-
-
     [NUM] = LAYOUT_split_3x6_3(
-        _______ , _______       , _______       , _______         , _______        , _______      , _______ , _______ , _______ , _______ , _______ , _______ ,
-        _______ , KC_1          , KC_2          , KC_3            , KC_4           , KC_5         , KC_6    , KC_7    , KC_8    , KC_9    , KC_0    , _______ ,
-        _______ , TD(TD_PARENS) , TD(TD_BRACES) , TD(TD_BRACKETS) , TD(TD_SLASHES) , TD(TD_GRAVE) , KC_PIPE , DW_QUES , _______ , _______ , _______ , _______ ,
-
-                                                    _______ , _______, _______,             _______, _______, _______
+        ___ , KC_1          , KC_2          , KC_3            , KC_4           , KC_5         , KC_6    , KC_7    , KC_8    , KC_9    , KC_0     , ___ ,
+        ___ , KC_EXLM       , KC_AT         , KC_HASH         , KC_DLR         , KC_PERC      , KC_CIRC , KC_AMPR , KC_ASTR , DW_PLUS , DW_EQUAL , ___ ,
+        ___ , TD(TD_PARENS) , TD(TD_BRACES) , TD(TD_BRACKETS) , TD(TD_SLASHES) , TD(TD_GRAVE) , KC_PIPE , DW_QUES , ___     , ___     , ___      , ___ ,
+        ___ , ___, ___,             ___, ___, ___
     )
-
 
   /* [BASE] = LAYOUT_split_3x6_3( */
   /*   QK_MAKE , KC_Q         , MEH_T(KC_W)  , HYPR_T(KC_E) , KC_R         , KC_T ,            KC_Y , KC_U         , HYPR_T(KC_I) , MEH_T(KC_O)  , KC_P             , KC_BTN2 , */
