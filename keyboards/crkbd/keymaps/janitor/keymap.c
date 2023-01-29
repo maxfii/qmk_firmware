@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 #include <stdio.h>
+#include "features/repeat_key.h"
 
 enum Layers { BASE, NUM, NAV, FUN, GAME, GAMEFUN };
 
@@ -39,8 +40,20 @@ enum Taps {
 #define DW_QUES  KC_LEFT_CURLY_BRACE
 #define DW_FSLASH KC_LEFT_BRACKET
 
+combo_t key_combos[] = {};
+uint16_t COMBO_LEN = 0;
 
+enum custom_keycodes {
+  REPEAT = SAFE_RANGE,
+  // Other custom keys...
+};
 
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+  if (!process_repeat_key(keycode, record, REPEAT)) { return false; }
+  // Your macros ...
+
+  return true;
+}
 
 qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_PARENS] = ACTION_TAP_DANCE_DOUBLE(KC_LEFT_PAREN, KC_RIGHT_PAREN),
@@ -64,23 +77,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX , LGUI_T(KC_EXLM) , LALT_T(KC_AT) , LCTL_T(KC_HASH) , LSFT_T(KC_DLR) , KC_PERC      ,                   KC_CIRC , LSFT_T(KC_AMPR) , LCTL_T(KC_ASTR) , LALT_T(DW_PLUS) , LGUI(DW_EQUAL) , XXXXXXX ,
     XXXXXXX , TD(TD_PARENS)   , TD(TD_BRACES) , TD(TD_BRACKETS) , TD(TD_SLASHES) , TD(TD_GRAVE) ,                   KC_PIPE , DW_QUES         , XXXXXXX         , XXXXXXX         , XXXXXXX        , XXXXXXX ,
 
-                                                XXXXXXX , XXXXXXX, XXXXXXX,             XXXXXXX, KC_TRNS, XXXXXXX
+                                                XXXXXXX , REPEAT, XXXXXXX,             XXXXXXX, KC_TRNS, XXXXXXX
   ),
 
   [NAV] = LAYOUT_split_3x6_3(
-    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,                 XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX  , XXXXXXX ,
-    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,                 DF(GAME) , KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT , XXXXXXX ,
-    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,                 KC_INS   , KC_HOME , KC_PGDN , KC_PGUP , KC_END   , XXXXXXX ,
+    XXXXXXX , XXXXXXX , KC_MEH  , KC_HYPR , XXXXXXX , XXXXXXX ,                 XXXXXXX  , XXXXXXX , KC_HYPR , KC_MEH  , XXXXXXX  , XXXXXXX ,
+    XXXXXXX , KC_LGUI , KC_LALT , KC_LCTL , KC_LSFT , XXXXXXX ,                 DF(GAME) , KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT , XXXXXXX ,
+    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,                 XXXXXXX  , KC_HOME , KC_PGDN , KC_PGUP , KC_END   , XXXXXXX ,
 
                                      XXXXXXX, KC_TRNS, XXXXXXX,                 KC_TRNS , XXXXXXX, KC_TRNS
   ),
 
   [FUN] = LAYOUT_split_3x6_3(
-    XXXXXXX,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,             KC_F6,      KC_F7 ,  KC_F8,   KC_F9,   KC_F10,  XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,             KC_F11,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,             KC_F12,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX , KC_F1   , MEH_T(KC_F2) , HYPR(KC_F3) , KC_F4   , KC_F5   ,            KC_F6  , KC_F7   , HYPR_T(KC_F8) , MEH_T(KC_F9) , KC_F10  , XXXXXXX ,
+    XXXXXXX , KC_LGUI , KC_LALT      , KC_LCTL     , KC_LSFT , XXXXXXX ,            KC_F11 , KC_LSFT , KC_LCTL       , KC_LALT      , KC_LGUI , XXXXXXX ,
+    XXXXXXX , XXXXXXX , XXXXXXX      , XXXXXXX     , XXXXXXX , XXXXXXX ,            KC_F12 , XXXXXXX , XXXXXXX       , XXXXXXX      , XXXXXXX , XXXXXXX ,
 
-                               XXXXXXX, KC_TRNS, XXXXXXX,             XXXXXXX, XXXXXXX, XXXXXXX
+                                              XXXXXXX, KC_TRNS, XXXXXXX,            XXXXXXX, XXXXXXX, XXXXXXX
   ),
 
   [GAME] = LAYOUT_split_3x6_3(
