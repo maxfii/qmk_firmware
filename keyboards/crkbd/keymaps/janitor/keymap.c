@@ -47,13 +47,10 @@ uint16_t COMBO_LEN = 0;
 
 enum custom_keycodes {
   REPEAT = SAFE_RANGE,
-  // Other custom keys...
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   if (!process_repeat_key(keycode, record, REPEAT)) { return false; }
-  // Your macros ...
-
   return true;
 }
 
@@ -74,16 +71,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ___, MEH_T(KC_SPC), REPEAT,            OSL(NUM), OSL(SYS),  ___
     ),
     [SYS] = LAYOUT_split_3x6_3(
-        ___ , ___    , ___ , ___ , ___          , ___ , ___ , ___     , ___     , ___    , ___      , ___ ,
-        ___ , ___    , ___ , ___ , LALT(KC_TAB) , ___ , ___ , KC_LEFT , KC_DOWN , KC_UP  , KC_RIGHT , ___ ,
-        ___ , KC_ESC , ___ , ___ , KC_TAB       , ___ , ___ , KC_ENT  , KC_BSPC , KC_DEL , ___      , ___ ,
+        ___ , KC_F1  , KC_F2 , KC_F3   , KC_F4  , KC_F5 , KC_F6  , KC_F7   , KC_F8   , KC_F9 , KC_F10   , ___ ,
+        ___ , KC_DEL , ___   , KC_BSPC , KC_ENT , ___   , KC_F11 , KC_LEFT , KC_DOWN , KC_UP , KC_RIGHT , ___ ,
+        ___ , KC_ESC , ___   , ___     , KC_TAB , ___   , KC_F12 , ___     , ___     , ___   , ___      , ___ ,
 
-        ___, OSL(NUM), ___,       OSL(NUM), MO(BASE), ___
+        ___, ___, ___,              ___, MO(BASE), ___
     ),
     [NUM] = LAYOUT_split_3x6_3(
         ___ , KC_1          , KC_2          , KC_3            , KC_4           , KC_5         , KC_6    , KC_7    , KC_8    , KC_9    , KC_0     , ___ ,
         ___ , KC_EXLM       , KC_AT         , KC_HASH         , KC_DLR         , KC_PERC      , KC_CIRC , KC_AMPR , KC_ASTR , DW_PLUS , DW_EQUAL , ___ ,
         ___ , TD(TD_PARENS) , TD(TD_BRACES) , TD(TD_BRACKETS) , TD(TD_SLASHES) , TD(TD_GRAVE) , KC_PIPE , DW_QUES , ___     , ___     , ___      , ___ ,
+
         ___ , ___, ___,             ___, ___, ___
     )
 
