@@ -64,8 +64,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_split_3x6_3(
-        QK_MAKE , KC_Q         , KC_W         , KC_E         , KC_R         , KC_T , KC_Y , KC_U         , KC_I         , KC_O         , KC_P             , KC_BTN2 ,
-        QK_BOOT , LGUI_T(KC_A) , LALT_T(KC_S) , LCTL_T(KC_D) , LSFT_T(KC_F) , KC_G , KC_H , LSFT_T(KC_J) , LCTL_T(KC_K) , LALT_T(KC_L) , LGUI_T (KC_SCLN) , ___ ,
+        QK_MAKE , KC_Q         , MEH_T(KC_W)  , HYPR_T(KC_E) , KC_R         , KC_T , KC_Y , KC_U         , HYPR_T(KC_I) , MEH_T(KC_O)  , KC_P             , KC_BTN2 ,
+        QK_BOOT , LGUI_T(KC_A) , LALT_T(KC_S) , LCTL_T(KC_D) , LSFT_T(KC_F) , KC_G , KC_H , LSFT_T(KC_J) , LCTL_T(KC_K) , LALT_T(KC_L) , LGUI_T (KC_SCLN) , ___     ,
         KC_BTN1 , KC_Z         , KC_X         , KC_C         , KC_V         , KC_B , KC_N , KC_M         , KC_COMM      , KC_DOT       , KC_SLSH          , KC_BTN1 ,
 
         ___, KC_SPC, REPEAT,            OSL(NUM), OSL(SYS),  ___
@@ -78,16 +78,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ___, OSL(FUN), ___,              ___, MO(BASE), ___
     ),
     [NUM] = LAYOUT_split_3x6_3(
-        ___ , KC_1          , KC_2          , KC_3            , KC_4           , KC_5         , KC_6    , KC_7    , KC_8    , KC_9     , KC_0          , ___ ,
-        ___ , KC_EXLM       , KC_AT         , KC_HASH         , KC_DLR         , KC_PERC      , KC_CIRC , KC_AMPR , KC_ASTR , DW_PLUS  , KC_QUOT       , ___ ,
-        ___ , TD(TD_PARENS) , TD(TD_BRACES) , TD(TD_BRACKETS) , TD(TD_SLASHES) , TD(TD_GRAVE) , KC_PIPE , DW_QUES , ___     , DW_EQUAL , LSFT(KC_QUOT) , ___ ,
+        ___ , KC_1            , MEH_T(KC_2)   , HYPR_T(KC_3)    , KC_4           , KC_5         , KC_6    , KC_7            , HYPR_T(KC_8)    , MEH_T(KC_9)     , KC_0            , ___ ,
+        ___ , LGUI_T(KC_EXLM) , LALT_T(KC_AT) , LCTL_T(KC_HASH) , LSFT_T(KC_DLR) , KC_PERC      , KC_CIRC , LSFT_T(KC_AMPR) , LCTL_T(KC_ASTR) , LALT_T(DW_PLUS) , LGUI_T(KC_QUOT) , ___ ,
+        ___ , TD(TD_PARENS)   , TD(TD_BRACES) , TD(TD_BRACKETS) , TD(TD_SLASHES) , TD(TD_GRAVE) , KC_PIPE , DW_QUES         , ___             , DW_EQUAL        , LSFT(KC_QUOT)   , ___ ,
 
         ___ , ___, ___,             ___, ___, ___
     ),
     [FUN] = LAYOUT_split_3x6_3(
-        ___ , KC_F1         , KC_F2         , KC_F3         , KC_F4         , KC_F5 , KC_F6  , KC_F7 , KC_F8 , KC_F9 , KC_F10 , ___ ,
-        ___ , OSM(MOD_LGUI) , OSM(MOD_LALT) , OSM(MOD_LCTL) , OSM(MOD_LSFT) , ___   , KC_F11 , ___   , ___   , ___   , ___    , ___ ,
-        ___ , ___           , ___           , ___           , ___           , ___   , KC_F12 , ___   , ___   , ___   , ___    , ___ ,
+        ___ , KC_F1 , KC_F2 , KC_F3 , KC_F4 , KC_F5 , KC_F6  , KC_F7 , KC_F8 , KC_F9 , KC_F10 , ___ ,
+        ___ , ___   , ___   , ___   , ___   , ___   , KC_F11 , ___   , ___   , ___   , ___    , ___ ,
+        ___ , ___   , ___   , ___   , ___   , ___   , KC_F12 , ___   , ___   , ___   , ___    , ___ ,
 
                                                   ___, ___, ___,            ___, ___, ___
     )
