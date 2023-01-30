@@ -71,9 +71,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ___, KC_SPC, REPEAT,            OSL(NUM), OSL(SYS),  ___
     ),
     [SYS] = LAYOUT_split_3x6_3(
-        ___ , ___                , ___          , ___          , ___    , ___          , ___           , ___           , ___           , ___           , ___           , ___ ,
-        ___ , KC_ESC             , KC_DEL       , KC_BSPC      , KC_ENT , KC_TAB       , OSM(MOD_HYPR) , KC_LEFT       , KC_DOWN       , KC_UP         , KC_RIGHT      , ___ ,
-        ___ , LSFT(LCTL(KC_TAB)) , LCTL(KC_TAB) , LSFT(KC_TAB) , KC_TAB , LALT(KC_TAB) , OSM(MOD_MEH)  , OSM(MOD_LSFT) , OSM(MOD_LCTL) , OSM(MOD_LALT) , OSM(MOD_LGUI) , ___ ,
+        ___ , ___                , LCTL(KC_DEL) , LCTL(KC_BSPC) , ___    , ___          , ___ , ___           , ___           , ___           , ___           , ___ ,
+        ___ , KC_ESC             , KC_DEL       , KC_BSPC       , KC_ENT , KC_TAB       , ___ , KC_LEFT       , KC_DOWN       , KC_UP         , KC_RIGHT      , ___ ,
+        ___ , LSFT(LCTL(KC_TAB)) , LCTL(KC_TAB) , LSFT(KC_TAB)  , KC_TAB , LALT(KC_TAB) , ___ , OSM(MOD_LSFT) , OSM(MOD_LCTL) , OSM(MOD_LALT) , OSM(MOD_LGUI) , ___ ,
 
         ___, OSL(FUN), ___,              ___, MO(BASE), ___
     ),
@@ -85,11 +85,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ___ , ___, ___,             ___, ___, ___
     ),
     [FUN] = LAYOUT_split_3x6_3(
-        ___ , KC_F1 , KC_F2 , KC_F3 , KC_F4 , KC_F5 , KC_F6  , KC_F7 , KC_F8 , KC_F9 , KC_F10 , ___ ,
-        ___ , ___   , ___   , ___   , ___   , ___   , KC_F11 , ___   , ___   , ___   , ___    , ___ ,
-        ___ , ___   , ___   , ___   , ___   , ___   , KC_F12 , ___   , ___   , ___   , ___    , ___ ,
+        ___ , KC_F1       , MEH_T(KC_F2) , HYPR_T(KC_F3) , KC_F4       , KC_F5 , KC_F6  , KC_F7       , HYPR_T(KC_F8) , MEH_T(KC_F9) , KC_F10      , ___ ,
+        ___ , LGUI_T(___) , LALT_T(___)  , LCTL_T(___)   , LSFT_T(___) , ___   , KC_F11 , LSFT_T(___) , LCTL_T(___)   , LALT_T(___)  , LGUI_T(___) , ___ ,
+        ___ , ___         , ___          , ___           , ___         , ___   , KC_F12 , ___         , ___           , ___          , ___         , ___ ,
 
-                                                  ___, ___, ___,            ___, ___, ___
+        ___, ___, ___,            ___, ___, ___
     )
 
   /* [BASE] = LAYOUT_split_3x6_3( */
