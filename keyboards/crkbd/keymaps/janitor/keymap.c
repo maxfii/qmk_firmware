@@ -71,9 +71,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [1] = LAYOUT_split_3x6_3(
-    XXXXXXX , KC_1            , MEH_T(KC_2)   , HYPR_T(KC_3)    , KC_4           , KC_5         ,                   KC_6    , KC_7            , HYPR_T(KC_8)    , MEH_T(KC_9)     , KC_0           , XXXXXXX ,
-    XXXXXXX , LGUI_T(KC_EXLM) , LALT_T(KC_AT) , LCTL_T(KC_HASH) , LSFT_T(KC_DLR) , KC_PERC      ,                   KC_CIRC , LSFT_T(KC_AMPR) , LCTL_T(KC_ASTR) , LALT_T(DW_PLUS) , LGUI(DW_EQUAL) , XXXXXXX ,
-    XXXXXXX , TD(TD_PARENS)   , TD(TD_BRACES) , TD(TD_BRACKETS) , TD(TD_SLASHES) , TD(TD_GRAVE) ,                   KC_PIPE , DW_QUES         , XXXXXXX         , XXXXXXX         , XXXXXXX        , XXXXXXX ,
+    XXXXXXX , KC_1            , KC_2          , KC_3            , KC_4           , KC_5         ,                   KC_6    , KC_7            , KC_8    , KC_9    , KC_0     , XXXXXXX ,
+    XXXXXXX , KC_EXLM         , KC_AT         , KC_HASH         , KC_DLR         , KC_PERC      ,                   KC_CIRC , KC_AMPR         , KC_ASTR , DW_PLUS , DW_EQUAL , XXXXXXX ,
+    XXXXXXX , TD(TD_PARENS)   , TD(TD_BRACES) , TD(TD_BRACKETS) , TD(TD_SLASHES) , TD(TD_GRAVE) ,                   KC_PIPE , DW_QUES         , XXXXXXX , XXXXXXX , XXXXXXX  , XXXXXXX ,
 
     XXXXXXX , TO(0), XXXXXXX,             XXXXXXX, TO(2), XXXXXXX
   ),
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX , KC_LGUI , KC_LALT , KC_LCTL , KC_LSFT , S(KC_TAB) ,               KC_TAB   , KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT , XXXXXXX ,
     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,                 XXXXXXX  , KC_HOME , KC_PGDN , KC_PGUP , KC_END   , XXXXXXX ,
 
-    XXXXXXX, TO(0), XXXXXXX,              XXXXXXX , XXXXXXX, XXXXXXX
+    XXXXXXX, TO(0), OSM(MOD_RCTL),              XXXXXXX , XXXXXXX, XXXXXXX
   ),
 
   [3] = LAYOUT_split_3x6_3(
