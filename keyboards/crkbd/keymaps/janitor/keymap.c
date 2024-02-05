@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_BTN3 , KC_A         , KC_S         , KC_D         , KC_F         , KC_G ,            KC_H , KC_J         , KC_K         , KC_L         , KC_SCLN          , KC_QUOT ,
     KC_BTN1 , KC_Z         , KC_X         , KC_C         , KC_V         , KC_B ,            KC_N , KC_M         , KC_COMM      , KC_DOT       , KC_SLSH          , KC_BTN1 ,
 
-    KC_ESC, KC_SPC, OSM(MOD_LSFT),          OSM(MOD_RCTL) , TO(1), REPEAT
+    KC_ESC, KC_SPC, QK_LEADER,   QK_REP, TO(1), OSM(MOD_LSFT)
   ),
 
   [1] = LAYOUT_split_3x6_3(
@@ -79,18 +79,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [2] = LAYOUT_split_3x6_3(
-    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,                 XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX  , XXXXXXX ,
-    XXXXXXX , KC_LGUI , KC_LALT , KC_LCTL , KC_LSFT , S(KC_TAB) ,               KC_TAB   , KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT , XXXXXXX ,
-    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,                 XXXXXXX  , KC_HOME , KC_PGDN , KC_PGUP , KC_END   , XXXXXXX ,
+    XXXXXXX , XXXXXXX       , XXXXXXX       , OSM(KC_MEH)   , XXXXXXX       , OSM(KC_HYPR),           XXXXXXX   , XXXXXXX , XXXXXXX , KC_BSPC , KC_DEL   , XXXXXXX ,
+    XXXXXXX , OSM(MOD_LGUI) , OSM(MOD_LALT) , OSM(MOD_LCTL) , OSM(MOD_LSFT) , A(KC_TAB),              KC_TAB    , KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT , XXXXXXX ,
+    XXXXXXX , XXXXXXX       , XXXXXXX       , XXXXXXX       , XXXXXXX       , S(A(KC_TAB)),           S(KC_TAB) , KC_HOME , KC_PGDN , KC_PGUP , KC_END   , XXXXXXX ,
 
-    XXXXXXX, TO(0), OSM(MOD_RCTL),              XXXXXXX , XXXXXXX, XXXXXXX
+    XXXXXXX, TO(0), OSL(3),              KC_ENTER , TO(2), XXXXXXX
   ),
 
   [3] = LAYOUT_split_3x6_3(
-    XXXXXXX , KC_F1   , MEH_T(KC_F2) , HYPR(KC_F3) , KC_F4   , KC_F5   ,            KC_F6  , KC_F7   , HYPR_T(KC_F8) , MEH_T(KC_F9) , KC_F10  , XXXXXXX ,
-    XXXXXXX , KC_LGUI , KC_LALT      , KC_LCTL     , KC_LSFT , XXXXXXX ,            KC_F11 , KC_LSFT , KC_LCTL       , KC_LALT      , KC_LGUI , XXXXXXX ,
-    XXXXXXX , XXXXXXX , XXXXXXX      , XXXXXXX     , XXXXXXX , XXXXXXX ,            KC_F12 , XXXXXXX , XXXXXXX       , XXXXXXX      , XXXXXXX , XXXXXXX ,
+    XXXXXXX , KC_F1   , KC_F2   , KC_F3   , KC_F4   , KC_F5   ,            KC_F6  , KC_F7   , KC_F8   , KC_F9   , KC_F10  , XXXXXXX ,
+    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,            KC_F11 , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
+    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,            KC_F12 , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
 
-    XXXXXXX, KC_TRNS, XXXXXXX,            XXXXXXX, XXXXXXX, XXXXXXX
+    XXXXXXX, XXXXXXX, XXXXXXX,            XXXXXXX, XXXXXXX, XXXXXXX
   )
 };
