@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_BTN3 , KC_A         , KC_S         , KC_D         , KC_F         , KC_G ,            KC_H , KC_J         , KC_K         , KC_L         , KC_SCLN          , KC_QUOT ,
     KC_BTN1 , KC_Z         , KC_X         , KC_C         , KC_V         , KC_B ,            KC_N , KC_M         , KC_COMM      , KC_DOT       , KC_SLSH          , KC_BTN1 ,
 
-    KC_ESC, KC_SPC, QK_LEADER,   QK_REP, TO(1), OSM(MOD_LSFT)
+    KC_ESC, KC_SPC, OSM(MOD_LSFT),   OSM(MOD_LCTL), TO(1), XXXXXXX
   ),
 
   [1] = LAYOUT_split_3x6_3(
@@ -87,10 +87,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [3] = LAYOUT_split_3x6_3(
-    XXXXXXX , KC_F1   , KC_F2   , KC_F3   , KC_F4   , KC_F5   ,            KC_F6  , KC_F7   , KC_F8   , KC_F9   , KC_F10  , XXXXXXX ,
-    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,            KC_F11 , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
-    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,            KC_F12 , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
+    XXXXXXX , KC_F1  , KC_F2  , KC_F3  , KC_F4   , KC_F5   ,            KC_F6  , KC_F7   , KC_F8   , KC_F9   , KC_F10  , XXXXXXX ,
+    XXXXXXX , RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI , XXXXXXX ,            KC_F11 , KC_MUTE , KC_VOLD , KC_VOLU , XXXXXXX , XXXXXXX ,
+    XXXXXXX , RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD , XXXXXXX ,            KC_F12 , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
 
-    XXXXXXX, XXXXXXX, XXXXXXX,            XXXXXXX, XXXXXXX, XXXXXXX
+    XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX
   )
 };
