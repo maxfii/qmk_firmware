@@ -20,46 +20,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdio.h>
 #include "features/repeat_key.h"
 
-enum {
-    TD_PARENS,
-    TD_BRACES,
-    TD_BRACKETS,
-    TD_SLASHES,
-    TD_GRAVE
-};
-
-#define DW_RBRACE KC_PLUS
-#define DW_LBRACE KC_UNDERSCORE
-#define DW_RBRACKET KC_EQUAL
-#define DW_LBRACKET KC_MINUS
-
-#define DW_EQUAL KC_RIGHT_BRACKET
-#define DW_PLUS  KC_RIGHT_CURLY_BRACE
-#define DW_QUES  KC_LEFT_CURLY_BRACE
-#define DW_FSLASH KC_LEFT_BRACKET
-
 combo_t key_combos[] = {};
 uint16_t COMBO_LEN = 0;
 
-enum custom_keycodes {
-  REPEAT = SAFE_RANGE,
-  // Other custom keys...
-};
-
-bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-  if (!process_repeat_key(keycode, record, REPEAT)) { return false; }
-  // Your macros ...
-
-  return true;
-}
-
-tap_dance_action_t tap_dance_actons[] = {
-    [TD_PARENS] = ACTION_TAP_DANCE_DOUBLE(KC_LEFT_PAREN, KC_RIGHT_PAREN),
-    [TD_BRACES] = ACTION_TAP_DANCE_DOUBLE(DW_LBRACE, DW_RBRACE),
-    [TD_BRACKETS] = ACTION_TAP_DANCE_DOUBLE(DW_LBRACKET, DW_RBRACKET),
-    [TD_SLASHES] = ACTION_TAP_DANCE_DOUBLE(DW_FSLASH, KC_BACKSLASH),
-    [TD_GRAVE] = ACTION_TAP_DANCE_DOUBLE(KC_GRAVE, KC_TILDE)
-};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
@@ -67,23 +30,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_BTN3 , KC_A         , KC_S         , KC_D         , KC_F         , KC_G ,            KC_H , KC_J         , KC_K         , KC_L         , KC_SCLN          , KC_BTN3 ,
     KC_BTN1 , KC_Z         , KC_X         , KC_C         , KC_V         , KC_B ,            KC_N , KC_M         , KC_COMM      , KC_DOT       , KC_SLSH          , KC_BTN1 ,
 
-    KC_ESC, KC_SPC, OSM(MOD_LSFT),   OSM(MOD_LCTL), TO(1), XXXXXXX
+    KC_ESC, KC_SPC, OSM(MOD_LSFT),        OSM(MOD_LCTL), TO(1), XXXXXXX
   ),
 
   [1] = LAYOUT_split_3x6_3(
-    XXXXXXX , KC_1            , KC_2          , KC_3            , KC_4           , KC_5         ,                   KC_6    , KC_7            , KC_8    , KC_9    , KC_0     , XXXXXXX ,
-    XXXXXXX , KC_EXLM         , KC_AT         , KC_HASH         , KC_DLR         , KC_PERC      ,                   KC_CIRC , KC_AMPR         , KC_ASTR , DW_PLUS , DW_EQUAL , XXXXXXX ,
-    XXXXXXX , TD(TD_PARENS)   , TD(TD_BRACES) , TD(TD_BRACKETS) , TD(TD_SLASHES) , TD(TD_GRAVE) ,                   KC_PIPE , DW_QUES         , KC_QUOT , XXXXXXX , XXXXXXX  , XXXXXXX ,
+    XXXXXXX , XXXXXXX         , XXXXXXX       , XXXXXXX         , XXXXXXX        , XXXXXXX      ,                   XXXXXXX , KC_BSLS , KC_MINS , KC_EQL  , XXXXXXX  , XXXXXXX ,
+    XXXXXXX , KC_1            , KC_2          , KC_3            , KC_4           , KC_5         ,                   KC_6    , KC_7    , KC_8    , KC_9    , KC_0     , XXXXXXX ,
+    XXXXXXX , XXXXXXX         , XXXXXXX       , XXXXXXX         , XXXXXXX        , XXXXXXX      ,                   XXXXXXX , KC_QUOT , KC_LBRC , KC_RBRC , XXXXXXX  , XXXXXXX ,
 
-    XXXXXXX , TO(0), XXXXXXX,             KC_ENTER, TO(2), XXXXXXX
+    XXXXXXX , TO(0), OSM(MOD_LSFT),             KC_ENTER, TO(2), XXXXXXX
   ),
 
   [2] = LAYOUT_split_3x6_3(
     XXXXXXX , XXXXXXX       , XXXXXXX       , OSM(KC_MEH)   , XXXXXXX       , OSM(KC_HYPR),           XXXXXXX   , XXXXXXX , XXXXXXX , KC_BSPC , KC_DEL   , XXXXXXX ,
-    XXXXXXX , OSM(MOD_LGUI) , OSM(MOD_LALT) , OSM(MOD_LCTL) , OSM(MOD_LSFT) , A(KC_TAB),              KC_TAB    , KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT , XXXXXXX ,
-    XXXXXXX , XXXXXXX       , XXXXXXX       , XXXXXXX       , XXXXXXX       , S(A(KC_TAB)),           S(KC_TAB) , KC_HOME , KC_PGDN , KC_PGUP , KC_END   , XXXXXXX ,
+    XXXXXXX , OSM(MOD_LGUI) , OSM(MOD_LALT) , OSM(MOD_LCTL) , OSM(MOD_LSFT) , XXXXXXX,                KC_TAB    , KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT , XXXXXXX ,
+    XXXXXXX , XXXXXXX       , XXXXXXX       , XXXXXXX       , XXXXXXX       , XXXXXXX,                S(KC_TAB) , KC_HOME , KC_PGDN , KC_PGUP , KC_END   , XXXXXXX ,
 
-    XXXXXXX, TO(0), OSL(3),              KC_ENTER , TO(2), XXXXXXX
+    XXXXXXX, TO(0), TO(3),              KC_ENTER , TO(2), XXXXXXX
   ),
 
   [3] = LAYOUT_split_3x6_3(
@@ -91,6 +54,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX , RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI , XXXXXXX ,            KC_F11 , KC_MUTE , KC_VOLD , KC_VOLU , XXXXXXX , XXXXXXX ,
     XXXXXXX , RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD , XXXXXXX ,            KC_F12 , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
 
-    XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX
+    XXXXXXX , TO(0), OSM(MOD_LSFT), OSM(MOD_LCTL), XXXXXXX , XXXXXXX
   )
 };
