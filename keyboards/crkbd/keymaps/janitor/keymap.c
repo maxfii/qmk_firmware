@@ -42,11 +42,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [2] = LAYOUT_split_3x6_3(
-    XXXXXXX , XXXXXXX       , XXXXXXX       , OSM(KC_MEH)   , XXXXXXX       , OSM(KC_HYPR),           XXXXXXX   , XXXXXXX , XXXXXXX , KC_BSPC , KC_DEL   , XXXXXXX ,
-    XXXXXXX , OSM(MOD_LGUI) , OSM(MOD_LALT) , OSM(MOD_LCTL) , OSM(MOD_LSFT) , XXXXXXX,                KC_TAB    , KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT , XXXXXXX ,
-    XXXXXXX , XXXXXXX       , XXXXXXX       , XXXXXXX       , XXXXXXX       , XXXXXXX,                S(KC_TAB) , KC_HOME , KC_PGDN , KC_PGUP , KC_END   , XXXXXXX ,
+    XXXXXXX , XXXXXXX       , XXXXXXX       , OSM(KC_MEH)   , XXXXXXX       , OSM(KC_HYPR),           A(KC_SPACE)   , XXXXXXX , XXXXXXX , KC_BSPC , KC_DEL   , XXXXXXX ,
+    XXXXXXX , OSM(MOD_LGUI) , OSM(MOD_LALT) , OSM(MOD_LCTL) , OSM(MOD_LSFT) , XXXXXXX,                KC_TAB        , KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT , XXXXXXX ,
+    XXXXXXX , XXXXXXX       , XXXXXXX       , XXXXXXX       , XXXXXXX       , XXXXXXX,                S(KC_TAB)     , KC_HOME , KC_PGDN , KC_PGUP , KC_END   , XXXXXXX ,
 
-    XXXXXXX, XXXXXXX, OSL(3),              KC_ENTER , XXXXXXX, TO(0)
+    XXXXXXX, XXXXXXX, OSL(3),              KC_ENTER, KC_BSPC, TO(0)
   ),
 
   [3] = LAYOUT_split_3x6_3(
