@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_BTN3 , KC_A         , KC_S         , KC_D         , KC_F         , KC_G ,            KC_H , KC_J         , KC_K         , KC_L         , KC_SCLN          , KC_BTN3 ,
     KC_BTN1 , KC_Z         , KC_X         , KC_C         , KC_V         , KC_B ,            KC_N , KC_M         , KC_COMM      , KC_DOT       , KC_SLSH          , KC_BTN1 ,
 
-    KC_ESC, MT(MOD_MEH, KC_SPC), OSM(MOD_LSFT),        OSM(MOD_LCTL), TO(1), XXXXXXX
+    KC_ESC, LT(2, KC_SPC), OSM(MOD_LSFT),        OSM(MOD_LCTL), OSL(1), TG(2)
   ),
 
   [1] = LAYOUT_split_3x6_3(
@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX , KC_1            , KC_2          , KC_3            , KC_4           , KC_5         ,                   KC_6    , KC_7    , KC_8    , KC_9    , KC_0     , XXXXXXX ,
     XXXXXXX , XXXXXXX         , XXXXXXX       , XXXXXXX         , XXXXXXX        , XXXXXXX      ,                   XXXXXXX , KC_QUOT , KC_LBRC , KC_RBRC , XXXXXXX  , XXXXXXX ,
 
-    XXXXXXX , TO(0), OSM(MOD_LSFT),             KC_ENTER, TO(2), XXXXXXX
+    XXXXXXX , XXXXXXX, OSM(MOD_LSFT),             KC_ENTER, XXXXXXX, XXXXXXX
   ),
 
   [2] = LAYOUT_split_3x6_3(
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX , OSM(MOD_LGUI) , OSM(MOD_LALT) , OSM(MOD_LCTL) , OSM(MOD_LSFT) , XXXXXXX,                KC_TAB    , KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT , XXXXXXX ,
     XXXXXXX , XXXXXXX       , XXXXXXX       , XXXXXXX       , XXXXXXX       , XXXXXXX,                S(KC_TAB) , KC_HOME , KC_PGDN , KC_PGUP , KC_END   , XXXXXXX ,
 
-    XXXXXXX, TO(0), TO(3),              KC_ENTER , TO(2), XXXXXXX
+    XXXXXXX, XXXXXXX, OSL(3),              KC_ENTER , XXXXXXX, TO(0)
   ),
 
   [3] = LAYOUT_split_3x6_3(
@@ -54,6 +54,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX , RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI , XXXXXXX ,            KC_F11 , KC_MUTE , KC_VOLD , KC_VOLU , XXXXXXX , XXXXXXX ,
     XXXXXXX , RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD , XXXXXXX ,            KC_F12 , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
 
-    XXXXXXX , TO(0), OSM(MOD_LSFT), OSM(MOD_LCTL), XXXXXXX , XXXXXXX
+    XXXXXXX , XXXXXXX, OSM(MOD_LSFT), OSM(MOD_LCTL), XXXXXXX , XXXXXXX
   )
 };
