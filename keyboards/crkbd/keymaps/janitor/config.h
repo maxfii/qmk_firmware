@@ -36,3 +36,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NO_AUTO_SHIFT_ALPHA
 #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
 #define AUTO_SHIFT_NO_SETUP
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
