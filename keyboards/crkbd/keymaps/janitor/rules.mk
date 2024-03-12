@@ -3,4 +3,4 @@ TAP_DANCE_ENABLE = no
 COMBO_ENABLE = yes
 REPEAT_KEY_ENABLE = YES
 
-SRC += features/repeat_key.c
+# SRC += features/repeat_key.c
