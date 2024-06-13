@@ -1,3 +1,2 @@
-# This file intentionally left blank
-
+REPEAT_KEY_ENABLE = yes
 SPLIT_KEYBOARD = yes
