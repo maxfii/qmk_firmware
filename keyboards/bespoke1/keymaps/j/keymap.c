@@ -12,7 +12,7 @@
 #define DW_QUES  KC_LEFT_CURLY_BRACE
 #define DW_FSLASH KC_LEFT_BRACKET
 
-enum Layers { BASE, NUM, NAV, FUN, GAME, GAMEFUN };
+enum Layers { BASE, NUM, NAV, FUN };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_split_3x5__3(
@@ -24,18 +24,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
   [NUM] = LAYOUT_split_3x5__3(
-    _______ , _______ , _______ , _______ , XXXXXXX                             ,   XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX  , XXXXXXX ,
-    KC_1   , KC_2   , KC_3    , KC_4           , KC_5                            ,  KC_6    , KC_7    , KC_8    , KC_9     , KC_0           ,
-    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,                               XXXXXXX , XXXXXXX , XXXXXXX  , XXXXXXX , XXXXXXX  ,
+    _______ , _______ , _______ , _______ , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
+    KC_1    , KC_2    , KC_3    , KC_4    , KC_5    , KC_6    , KC_7    , KC_8    , KC_9    , KC_0    ,
+    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
 
-                                                XXXXXXX , XXXXXXX, XXXXXXX,             XXXXXXX, XXXXXXX, XXXXXXX
+                                                XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
   ),
   [NAV] = LAYOUT_split_3x5__3(
-    XXXXXXX , OSM(MOD_MEH)  , OSM(MOD_HYPR) , XXXXXXX , XXXXXXX ,                 KC_WH_U   , KC_WH_D , KC_ESC,   KC_BSPC , KC_DEL  ,
-    OSM(MOD_LGUI) , OSM(MOD_LALT) , OSM(MOD_LCTL) , OSM(MOD_LSFT) , XXXXXXX ,                 KC_TAB    , KC_LEFT , KC_UP   , KC_DOWN , KC_RIGHT,
-    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,                 S(KC_TAB) , KC_HOME , KC_PGDN , KC_PGUP , KC_END,
+    XXXXXXX       , OSM(MOD_MEH)  , OSM(MOD_HYPR) , XXXXXXX       , XXXXXXX , KC_WH_U   , KC_WH_D , KC_ESC  , KC_BSPC , KC_DEL   ,
+    OSM(MOD_LGUI) , OSM(MOD_LALT) , OSM(MOD_LCTL) , OSM(MOD_LSFT) , XXXXXXX , KC_TAB    , KC_LEFT , KC_UP   , KC_DOWN , KC_RIGHT ,
+    XXXXXXX       , XXXXXXX       , XXXXXXX       , XXXXXXX       , XXXXXXX , S(KC_TAB) , KC_HOME , KC_PGDN , KC_PGUP , KC_END   ,
 
-                         XXXXXXX, XXXXXXX, XXXXXXX,                 KC_ENT , XXXXXXX, XXXXXXX
+                         XXXXXXX , XXXXXXX , XXXXXXX , KC_ENT , XXXXXXX , XXXXXXX
   ),
 
   [FUN] = LAYOUT_split_3x5__3(
