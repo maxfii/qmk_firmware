@@ -9,7 +9,7 @@
 #define DW_SLSH KC_LEFT_BRACKET
 
 
-enum Layers { BASE, NUM, CTL, NAV, FUN };
+enum Layers { BASE, NUM, NAV, FUN };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_split_3x5__3(
@@ -17,7 +17,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LGUI_T(KC_A) , LALT_T(KC_S) , LCTL_T(KC_D) , LSFT_T(KC_F) , KC_G , KC_H , LSFT_T(KC_J) , LCTL_T(KC_K) , LALT_T(KC_L) , LGUI_T (KC_SCLN) ,
     KC_Z         , KC_X         , KC_C         , KC_V         , KC_B , KC_N , KC_M         , KC_COMM      , KC_DOT       , KC_SLSH          ,
 
-                                      LT(CTL, KC_SPC), TT(NAV), XXXXXXX,XXXXXXX,           LM(NUM,MOD_LSFT ),OSL(NUM)
+                                      LT(NAV, KC_SPC), TG(NAV), XXXXXXX,XXXXXXX,           LM(NUM,MOD_LSFT ),OSL(NUM)
   ),
   [NUM] = LAYOUT_split_3x5__3(
     _______ , _______ , _______ , _______ , XXXXXXX , XXXXXXX , KC_BSLS , KC_GRV  , DW_LBRC , DW_RBRC ,
@@ -26,17 +26,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
                                                 TO(BASE),XXXXXXX  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
   ),
-  [CTL] = LAYOUT_split_3x5__3(
-    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_ESC  , KC_BSPC , KC_DEL  ,
-    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_ENT  , KC_TAB  , XXXXXXX , XXXXXXX ,
-    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_HOME , KC_PGDN , KC_PGUP , KC_END  ,
-
-                         TO(BASE), XXXXXXX       , XXXXXXX       , XXXXXXX        , XXXXXXX  , MO(FUN)
-  ),
   [NAV] = LAYOUT_split_3x5__3(
-    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , C(KC_I)   , KC_BTN1 , KC_BTN2 , KC_BTN3 , XXXXXXX  ,
-    XXXXXXX , KC_MS_L , KC_MS_D , KC_MS_U , KC_MS_R , XXXXXXX   , KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT ,
-    XXXXXXX , KC_WH_L , KC_WH_D , KC_WH_U , KC_WH_R , C(KC_DOT) , KC_HOME , KC_PGDN , KC_PGUP , KC_END   ,
+    KC_BTN3 , KC_BTN2 , KC_BTN1 , XXXXXXX , XXXXXXX , XXXXXXX  , XXXXXXX , KC_ESC  , KC_BSPC , KC_DEL  ,
+    XXXXXXX , KC_MS_L , KC_MS_D , KC_MS_U , KC_MS_R , KC_TAB   , KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT ,
+    XXXXXXX , KC_WH_L , KC_WH_D , KC_WH_U , KC_WH_R , KC_ENT   , KC_HOME , KC_PGDN , KC_PGUP , KC_END   ,
 
                          TO(BASE), XXXXXXX       , XXXXXXX       , XXXXXXX        , XXXXXXX  , MO(FUN)
   ),
