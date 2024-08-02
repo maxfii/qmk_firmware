@@ -1,0 +1,3 @@
+REPEAT_KEY_ENABLE = yes
+SPLIT_KEYBOARD = yes
+BOOTLOADER = caterina
